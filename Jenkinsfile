@@ -43,7 +43,6 @@ def artifactoryHost = "192.168.10.226"
 def artifactoryPort = "8081"
 def artifactoryRepo = "dev"
 def artifactorGroup = "vn.abbank.ace"
-def artifactorGroupPath = "vn/abbank/ace"
 def artifactoryCredentials = "nexus_dev" // defined in Jenkins credentials
 
 podTemplate(
@@ -68,7 +67,6 @@ podTemplate(
             envVar(key: 'ARTIFACTORY_PORT', value: "${artifactoryPort}"),
             envVar(key: 'ARTIFACTORY_REPO', value: "${artifactoryRepo}"),
             envVar(key: 'ARTIFACTORY_GROUP', value: "${artifactorGroup}"),
-            envVar(key: 'ARTIFACTORY_GROUP_PATH', value: "${artifactorGroupPath}"),
             envVar(key: 'ARTIFACTORY_CREDENTIALS', value: "${artifactoryCredentials}"),
             envVar(key: 'ACE_VERSION', value: "${aceVersion}"),
             envVar(key: 'ACE_LICENSE', value: "${aceLicense}"),
@@ -143,7 +141,6 @@ podTemplate(
                         -e "s/{{ACE_VERSION}}/$ACE_VERSION/g" \
                         -e "s/{{ACE_LICENSE}}/$ACE_LICENSE/g" \
                         -e "s/{{REPLICAS}}/$REPLICAS/g" \
-                        -e "s/{{ARTIFACTORY_GROUP_PATH}}/"$ARTIFACTORY_GROUP_PATH"/g" \
                         integration-server.yaml.tmpl > integration-server.yaml
                     cat integration-server.yaml
                     oc apply -f integration-server.yaml
