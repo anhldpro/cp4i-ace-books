@@ -127,7 +127,7 @@ podTemplate(
                 sh label: '', script: '''#!/bin/bash
                     set -e
                     cd $PROJECT_DIR
-                    BAR_FILE="${BAR_NAME}.bar"
+                    BAR_FILE="${BAR_NAME}-$BUILD_NUMBER.bar"
                     cat integration-server.yaml.tmpl
                     sed -e "s/{{NAME}}/$SERVER_NAME/g" \
                         -e "s/{{NAMESPACE}}/$NAMESPACE/g" \
@@ -135,7 +135,7 @@ podTemplate(
                         -e "s/{{ARTIFACTORY_PORT}}/$ARTIFACTORY_PORT/g" \
                         -e "s/{{ARTIFACTORY_REPO}}/$ARTIFACTORY_REPO/g" \
                         -e "s/{{ARTIFACTORY_GROUP}}/$ARTIFACTORY_GROUP/g" \
-                        -e "s/{{ARTIFACTORY_VERSION}}/$ARTIFACTORY_VERSION/g" \
+                        -e "s/{{ARTIFACTORY_VERSION}}/$BUILD_NUMBER/g" \
                         -e "s/{{ARTIFACTORY_BAR_NAME}}/$BAR_NAME/g" \
                         -e "s/{{BAR_FILE}}/$BAR_FILE/g" \
                         -e "s/{{CONFIGURATION_LIST}}/$CONFIGURATION_LIST/g" \
