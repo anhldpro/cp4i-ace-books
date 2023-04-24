@@ -43,6 +43,7 @@ def artifactoryHost = "192.168.10.226"
 def artifactoryPort = "8081"
 def artifactoryRepo = "dev"
 def artifactorGroup = "vn.abbank.ace"
+def artifactorGroupPath = "vn/abbank/ace"
 def artifactoryCredentials = "nexus_dev" // defined in Jenkins credentials
 
 podTemplate(
@@ -67,6 +68,7 @@ podTemplate(
             envVar(key: 'ARTIFACTORY_PORT', value: "${artifactoryPort}"),
             envVar(key: 'ARTIFACTORY_REPO', value: "${artifactoryRepo}"),
             envVar(key: 'ARTIFACTORY_GROUP', value: "${artifactorGroup}"),
+            envVar(key: 'ARTIFACTORY_GROUP_PATH', value: "${artifactorGroupPath}"),
             envVar(key: 'ARTIFACTORY_CREDENTIALS', value: "${artifactoryCredentials}"),
             envVar(key: 'ACE_VERSION', value: "${aceVersion}"),
             envVar(key: 'ACE_LICENSE', value: "${aceLicense}"),
@@ -134,7 +136,7 @@ podTemplate(
                         -e "s/{{ARTIFACTORY_HOST}}/$ARTIFACTORY_HOST/g" \
                         -e "s/{{ARTIFACTORY_PORT}}/$ARTIFACTORY_PORT/g" \
                         -e "s/{{ARTIFACTORY_REPO}}/$ARTIFACTORY_REPO/g" \
-                        -e "s/{{ARTIFACTORY_GROUP}}/$ARTIFACTORY_GROUP/g" \
+                        -e "s/{{ARTIFACTORY_GROUP}}/$ARTIFACTORY_GROUP_PATH/g" \
                         -e "s/{{ARTIFACTORY_VERSION}}/$BUILD_NUMBER/g" \
                         -e "s/{{ARTIFACTORY_BAR_NAME}}/$BAR_NAME/g" \
                         -e "s/{{BAR_FILE}}/$BAR_FILE/g" \
