@@ -141,6 +141,7 @@ podTemplate(
                         -e "s/{{ACE_VERSION}}/$ACE_VERSION/g" \
                         -e "s/{{ACE_LICENSE}}/$ACE_LICENSE/g" \
                         -e "s/{{REPLICAS}}/$REPLICAS/g" \
+                        -e "s/{{ARTIFACTORY_GROUP}}/"$ARTIFACTORY_GROUP"/g" \
                         integration-server.yaml.tmpl > integration-server.yaml
                     cat integration-server.yaml
                     oc apply -f integration-server.yaml
