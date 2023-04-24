@@ -41,7 +41,7 @@ def artifactorGroup = "vn.abbank.ace"
 def artifactoryCredentials = "nexus_dev" // defined in Jenkins credentials
 
 podTemplate(
-    serviceAccount: "jenkins-abbank",
+    serviceAccount: "jenkins-jenkins-abbank",
     containers: [
         containerTemplate(name: 'ace-buildbar', image: "${buildBarImage}", workingDir: "/home/jenkins", ttyEnabled: true, envVars: [
             envVar(key: 'BAR_NAME', value: "${barName}"),
