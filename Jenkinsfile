@@ -125,7 +125,6 @@ podTemplate(
                 sh label: '', script: '''#!/bin/bash
                     set -e
                     cd $PROJECT_DIR
-                    // BAR_FILE="${BAR_NAME}_${BUILD_NUMBER}.bar"
                     BAR_FILE="${BAR_NAME}.bar"
                     cat integration-server.yaml.tmpl
                     sed -e "s/{{NAME}}/$SERVER_NAME/g" \
