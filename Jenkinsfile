@@ -6,8 +6,8 @@
 // def buildBarImage = "default-route-openshift-image-registry.apps.ocp.seatechit.com.vn/jenkins/ace-buildbar:12.0.4.0-ubuntu"
 // def ocImage = "default-route-openshift-image-registry.apps.ocp.seatechit.com.vn/jenkins/oc-deploy:4.10"
 // for jenkin in OCP
-def buildBarImage = "172.30.23.234:5000/jenkins/ace-buildbar:12.0.4.0-ubuntu"
-def ocImage = "172.30.23.234:5000/jenkins/oc-deploy:4.10"
+def buildBarImage = "image-registry.openshift-image-registry.svc.cluster.local/jenkins/ace-buildbar:12.0.4.0-ubuntu"
+def ocImage = "image-registry.openshift-image-registry.svc.cluster.local/jenkins/oc-deploy:4.10"
 
 // Params for Git Checkout-Stage
 def gitCp4iDevOpsUtilsRepo = "https://github.com/anhldpro/cp4i-devops-utils.git"
