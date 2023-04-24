@@ -114,8 +114,8 @@ podTemplate(
                         set -e
                         cd $PROJECT_DIR
                         ls -lha
-                        echo "Calling upload-barfile-to-artifactory.sh ${ARTIFACTORY_HOST} ${ARTIFACTORY_REPO} ${ARTIFACTORY_GROUP} ${BAR_NAME} ${BUILD_NUMBER} ${ARTIFACTORY_USER} ${ARTIFACTORY_PASSWORD}"
-                        ./upload-barfile-to-artifactory.sh "${ARTIFACTORY_HOST}:${ARTIFACTORY_PORT}" ${ARTIFACTORY_REPO} ${ARTIFACTORY_GROUP} ${BAR_NAME} ${BUILD_NUMBER} ${ARTIFACTORY_USER} ${ARTIFACTORY_PASSWORD}
+                        echo "Calling upload-barfile-to-nexus.sh ${ARTIFACTORY_HOST} ${ARTIFACTORY_REPO} ${ARTIFACTORY_GROUP} ${BAR_NAME} ${BUILD_NUMBER} ${ARTIFACTORY_USER} ${ARTIFACTORY_PASSWORD}"
+                        ./upload-barfile-to-nexus.sh "${ARTIFACTORY_HOST}:${ARTIFACTORY_PORT}" ${ARTIFACTORY_REPO} ${ARTIFACTORY_GROUP} ${BAR_NAME} ${BUILD_NUMBER} ${ARTIFACTORY_USER} ${ARTIFACTORY_PASSWORD}
                         '''
                 }
             }
