@@ -136,6 +136,7 @@ podTemplate(
                         -e "s/{{ARTIFACTORY_REPO}}/$ARTIFACTORY_REPO/g" \
                         -e "s/{{ARTIFACTORY_GROUP}}/$ARTIFACTORY_GROUP/g" \
                         -e "s/{{ARTIFACTORY_VERSION}}/$ARTIFACTORY_VERSION/g" \
+                        -e "s/{{ARTIFACTORY_BAR_NAME}}/$BAR_NAME/g" \
                         -e "s/{{BAR_FILE}}/$BAR_FILE/g" \
                         -e "s/{{CONFIGURATION_LIST}}/$CONFIGURATION_LIST/g" \
                         -e "s/{{ACE_VERSION}}/$ACE_VERSION/g" \
